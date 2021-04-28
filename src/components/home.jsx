@@ -1,8 +1,6 @@
 import React from 'react';
 import MockedImage from '../assets/images/mocked-image.jpg';
 import Carousel from './common/carousel';
-import Button from './common/button';
-import Header from './common/header';
 
 const Home = () => {
   const slides = [
@@ -20,14 +18,23 @@ const Home = () => {
     },
   ]
 
+  const introductionMessage = small => {
+    const classVisibility = small ? "block sm:hidden flex flex-col items-center mt-5" 
+                                  : "hidden sm:block absolute top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2 text-center";
+    return (
+      <div className={`${classVisibility}`}>
+        <h1 className="text-black sm:text-white text-2xl md:text-4xl lg:text-6xl mb-2">Bem vindo!</h1>
+        <p className="text-gray-900 sm:text-gray-100 text-xs md:text-sm lg:text-lg mb-4 text-center">Mensagem aleatória de introdução <br/>Segunda linha</p>
+        <button className="bg-indigo-500 rounded-md text-white py-2 px-1 md:p-4 lg:p-5">Solicitar orçamento</button>
+      </div>
+    );
+  }
+
   return (
     <>
+      {introductionMessage(true)}
       <Carousel slides={slides}>
-        <div className="absolute top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          <Header>Bem vindo!</Header>
-          <p className="text-gray-100 text-xs md:text-sm lg:text-lg mb-4">Mensagem aleatória de introdução <br/>Segunda linha</p>
-          <Button className="p-2 md:p-4 lg:p-5">Solicitar orçamento</Button>
-        </div>
+        {introductionMessage(false)}
       </Carousel>
     </>
   );

@@ -6,14 +6,13 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 const Carousel = ({slides, children, className, ...other}) => {
   return (
     <CarouselProvider
-        naturalSlideWidth={10}
-        naturalSlideHeight={10}
         totalSlides={slides.length}
         isPlaying={true}
         touchEnabled={false}
         dragEnabled={false}
         infinite={true}
         isIntrinsicHeight={true}
+
         className={`flex flex-col overflow-hidden relative my-5 ${className}`}
         {...other}
       >
