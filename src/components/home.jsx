@@ -1,6 +1,8 @@
 import React from 'react';
 import MockedImage from '../assets/images/mocked-image.jpg';
 import Carousel from './common/carousel';
+import SectionHeader from './common/sectionHeader';
+import Section from './common/section';
 
 const Home = () => {
   const slides = [
@@ -25,7 +27,7 @@ const Home = () => {
       <div className={`${classVisibility}`}>
         <h1 className="text-black sm:text-white text-2xl md:text-4xl lg:text-6xl mb-2">Bem vindo!</h1>
         <p className="text-gray-900 sm:text-gray-100 text-xs md:text-sm lg:text-lg mb-4 text-center">Mensagem aleatória de introdução <br/>Segunda linha</p>
-        <button className="bg-indigo-500 rounded-md text-white py-2 px-1 md:p-4 lg:p-5">Solicitar orçamento</button>
+        <button className="bg-indigo-500 rounded-md text-white p-2 md:p-4 lg:p-5">Solicitar orçamento</button>
       </div>
     );
   }
@@ -36,6 +38,9 @@ const Home = () => {
       <Carousel slides={slides}>
         {introductionMessage(false)}
       </Carousel>
+
+      <Section />
+      <SectionHeader>Teste</SectionHeader>
     </>
   );
 };
