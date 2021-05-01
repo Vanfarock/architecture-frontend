@@ -4,6 +4,8 @@ import { CarouselProvider, Slider, Slide, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const Carousel = ({slides, children, className, ...other}) => {
+  if (!slides.length) return null;
+  
   return (
     <CarouselProvider
         totalSlides={slides.length}
@@ -13,7 +15,7 @@ const Carousel = ({slides, children, className, ...other}) => {
         infinite={true}
         isIntrinsicHeight={true}
 
-        className={`flex flex-col overflow-hidden relative my-5 ${className}`}
+        className={`flex flex-col overflow-hidden relative my-5 ${className || ''}`}
         {...other}
       >
         <Slider>

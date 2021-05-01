@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .max-h-200 {
+    max-height: 200px;
+  }
+
+  .text-overflow {
+    line-height: 1.5rem;
+    position: relative;
+    max-height: calc(1.5rem * 4);
+    overflow: hidden;
+    padding-right: 1rem;
+  }
+
+  .text-overflow::before {
+    content: "...";
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+  }
+
+  .text-overflow::after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+  }
+}
+
 html,
 body {
   font-family: "Libre Franklin", "Arial Narrow", Arial, sans-serif;
