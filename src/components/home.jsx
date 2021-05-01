@@ -1,5 +1,5 @@
 import React from 'react';
-import MockedImage from "../assets/images/mocked-image.jpg";
+import Location from './location';
 import Carousel from './common/carousel';
 import Section from './common/section';
 import HoverableImage from './common/hoverableImage';
@@ -67,6 +67,8 @@ const Home = () => {
                items={renderProjects(projects)}
                containerClassName="mb-5" />
       <Section label="Últimas postagens" items={renderPosts(posts)} />
+      
+      <Location className="w-full" />
     </>
   );
 };
