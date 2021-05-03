@@ -1,4 +1,5 @@
 import React from 'react';
+import commonStyles from './util/commonStyles';
 
 const Navbar = () => {
   const navItems = [
@@ -8,7 +9,7 @@ const Navbar = () => {
     },
     {
       path: '/contato',
-      label: 'Contato'
+      label: 'Contatos'
     },
     {
       path: '/sobre',
@@ -17,8 +18,8 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="bg-coolGray-50 shadow flex justify-center">
-      <div className="flex flex-col sm:flex-row w-screen justify-between items-center px-5 max-w-screen-2xl">
+    <nav className="bg-gray-50 shadow flex justify-center">
+      <div className={`flex flex-col sm:flex-row w-screen justify-between items-center px-5 ${commonStyles.responsiveWidth}`}>
         <div className="flex-1 mt-5 sm:mt-0">
           <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
           <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />

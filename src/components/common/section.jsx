@@ -1,11 +1,12 @@
 import React from 'react';
 import SectionHeader from './sectionHeader';
 import Dashboard from './dashboard';
+import commonStyles from '../util/commonStyles';
 import { PropTypes } from 'prop-types';
 
 const Section = ({label, items, containerClassName}) => {
   return (
-    <div className={`pb-6 md:pb-3 max-w-screen-2xl mx-1 sm:mx-2 md:mx-3 lg:mx-4 xl:mx-5 2xl:mx-auto sm:mb-10 ${containerClassName || ''}`}>
+    <div className={`pb-6 md:pb-3 ${commonStyles.responsiveWidth} ${commonStyles.responsiveMargin} ${containerClassName || ''}`}>
       <SectionHeader className="pb-1">{label}</SectionHeader>
       <Dashboard items={items} />
     </div>
