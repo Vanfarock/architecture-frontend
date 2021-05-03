@@ -64,8 +64,7 @@ const Home = () => {
       </Carousel>
 
       <Section label="Projetos" 
-               items={renderProjects(projects)}
-               containerClassName="mb-5" />
+               items={renderProjects(projects)} />
       <Section label="Últimas postagens" items={renderPosts(posts)} />
       
       <Location className="w-full" />
