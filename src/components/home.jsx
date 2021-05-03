@@ -53,7 +53,7 @@ const Home = () => {
                                 containerClassName={`border rounded-md shadow p-5 ${index === 0 ? '' : 'ml-1'}`}
                                 titleClassName="text-xl font-bold mb-2" />
       }
-    ))
+    ));
   }
 
   return (
