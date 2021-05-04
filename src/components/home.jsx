@@ -8,6 +8,7 @@ import Card from './common/card';
 import { getSlides } from './../service/homeSlidesService';
 import { getProjects } from './../service/projectsService';
 import { getPosts } from './../service/postsService';
+import Button from './common/button';
 
 const Home = () => {
   const slides = getSlides();
@@ -25,9 +26,7 @@ const Home = () => {
         <p className="text-gray-900 sm:text-gray-100 text-xs md:text-sm lg:text-lg mb-4 text-center">
           Mensagem aleatória de introdução <br/>Segunda linha
         </p>
-        <button className="transition bg-indigo-500 hover:bg-indigo-600 rounded-md text-white p-2 md:p-4 lg:p-5">
-          Solicitar orçamento
-        </button>
+        <Button className="p-2 md:p-4 lg:p-5">Solicitar orçamento</Button>
       </div>
     );
   }

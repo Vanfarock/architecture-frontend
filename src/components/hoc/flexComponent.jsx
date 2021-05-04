@@ -10,7 +10,7 @@ const FlexComponent = ({ Component }) => {
 };
 
 FlexComponent.propTypes = {
-  Component: PropTypes.node.isRequired,
+  Component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 };
 
 export default FlexComponent;
