@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="flex flex-col py-9">
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-col flex-shrink text-gray-500">
-              Icon made by Freepik from www.flaticon.com
+              Icons made by Freepik from www.flaticon.com
             </div>
             <div className="flex-shrink grid grid-cols-3">
               <img className="w-7 mx-2 opacity-70" src={Facebook} alt="Facebook"/>
