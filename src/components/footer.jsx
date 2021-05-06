@@ -30,8 +30,8 @@ const Footer = () => {
               <img className="w-7 mx-2 opacity-70" src={Linkedin} alt="Linkedin"/>
             </div>
           </div>
-          <div className="text-gray-500 text-center mx-auto my-0">
-            &copy; 2021 Company name. Todos os direitos reservados.
+          <div className="text-gray-500 text-center mx-auto mt-5">
+            &copy; 2021 Company name. Feito com &#10084; por <a className="underline" href="https://www.linkedin.com/in/vinicius-manuel-martins-5010a7186/">Vinícius Manuel Martins</a>
           </div>
         </div>
       </div>

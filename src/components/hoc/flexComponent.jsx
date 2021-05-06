@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const FlexComponent = ({ Component }) => {
   return (
-    <div className="flex-shrink">
+    <div className="flex-1">
       <Component />
     </div>
   );

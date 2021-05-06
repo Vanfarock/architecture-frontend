@@ -3,14 +3,28 @@ import Footer from "./components/footer";
 import Home from "./components/home";
 import Navbar from "./components/navbar";
 import FlexComponent from "./components/hoc/flexComponent";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Contacts from "./components/contacts";
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <BrowserRouter>
+      {/* <div className="flex flex-col flex-1"> */}
       <Navbar />
-      <FlexComponent Component={Home} />
+      <Switch>
+        <Route
+          path="/"
+          exact
+          render={(props) => <FlexComponent {...props} Component={Home} />}
+        />
+        <Route
+          path="/contato"
+          render={(props) => <FlexComponent {...props} Component={Contacts} />}
+        />
+      </Switch>
       <Footer />
-    </div>
+      {/* </div> */}
+    </BrowserRouter>
   );
 }
 
