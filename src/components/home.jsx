@@ -9,6 +9,7 @@ import { getSlides } from './../service/homeSlidesService';
 import { getProjects } from './../service/projectsService';
 import { getPosts } from './../service/postsService';
 import Button from './common/button';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const slides = getSlides();
@@ -26,7 +27,9 @@ const Home = () => {
         <p className="text-gray-900 sm:text-gray-100 text-xs md:text-sm lg:text-lg mb-4 text-center">
           Mensagem aleatória de introdução <br/>Segunda linha
         </p>
-        <Button className="p-2 md:p-4 lg:p-5">Solicitar orçamento</Button>
+        <Link to="solicitar-orcamento">
+          <Button className="p-2 md:p-4 lg:p-5">Solicitar orçamento</Button>
+        </Link>
       </div>
     );
   }
@@ -63,6 +66,7 @@ const Home = () => {
       </Carousel>
 
       <Section label="Projetos" 
+               path="projetos"
                items={renderProjects(projects)} />
       <Section label="Últimas postagens" items={renderPosts(posts)} />
       

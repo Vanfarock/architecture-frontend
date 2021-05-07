@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import commonStyles from './util/commonStyles';
 import Button from './common/button';
 
@@ -23,8 +23,10 @@ const Navbar = () => {
         <nav className="bg-gray-50 shadow flex justify-center">
             <div className={`flex flex-col mb-3 sm:mb-0 sm:flex-row w-screen justify-between items-center px-5 ${commonStyles.responsiveWidth}`}>
                 <div className="flex-1 mt-5 sm:mt-0">
-                    <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
-                    <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+                    <Link to="/">
+                      <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                      <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+                    </Link>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:space-x-6 text-center">
                     {navItems.map(item => (
@@ -35,7 +37,9 @@ const Navbar = () => {
                         </NavLink>
                     ))}
                 </div>
-                <Button className="p-5 sm:p-2 md:p-3 lg:p-4 ml-3">Solicitar orçamento</Button>
+                <Link to="solicitar-orcamento">
+                  <Button className="p-5 sm:p-2 md:p-3 lg:p-4 ml-3">Solicitar orçamento</Button>
+                </Link>
             </div>
         </nav>
     );
