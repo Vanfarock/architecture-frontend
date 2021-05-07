@@ -4,6 +4,7 @@ import Facebook from '../assets/icons/facebook.svg';
 import Instagram from '../assets/icons/instagram.svg';
 import Linkedin from '../assets/icons/linkedin.svg';
 import Button from './common/button';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,11 +12,19 @@ const Footer = () => {
       <div className={`divide-y-2 divide-gray-300 ${commonStyles.responsiveWidth} ${commonStyles.responsiveMargin}`}>
         <div>
           <ul className="flex flex-col items-center sm:flex-row sm:justify-around sm:items-center py-14">
-            <li className="my-3 sm:my-0 font-bold text-gray-500">PROJETOS</li>
-            <li className="my-3 sm:my-0 font-bold text-gray-500">SOBRE</li>
-            <li className="my-3 sm:my-0 font-bold text-gray-500">CONTATOS</li>
+            <li className="my-3 sm:my-0 font-bold text-gray-500">
+              <Link to="/projetos">PROJETOS</Link>
+            </li>
+            <li className="my-3 sm:my-0 font-bold text-gray-500">
+              <Link to="/contato">CONTATOS</Link>
+            </li>
+            <li className="my-3 sm:my-0 font-bold text-gray-500">
+              <Link to="/sobre">SOBRE</Link>
+            </li>
             <li>
-              <Button className="p-5 sm:p-2 md:p-3 lg:p-4">Solicitar orçamento</Button>
+              <Link to="solicitar-orcamento">
+                <Button className="p-5 sm:p-2 md:p-3 lg:p-4">Solicitar orçamento</Button>
+              </Link>
             </li>
           </ul>
         </div>
