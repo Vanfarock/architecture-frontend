@@ -6,14 +6,14 @@ import HoverableImage from './common/hoverableImage';
 import Card from './common/card';
 
 import { getSlides } from './../service/homeSlidesService';
-import { getProjects } from './../service/projectsService';
+import { getMainProjects } from './../service/projectsService';
 import { getPosts } from './../service/postsService';
 import Button from './common/button';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const slides = getSlides();
-  const projects = getProjects();
+  const projects = getMainProjects();
   const posts = getPosts();
 
   const introductionMessage = small => {
@@ -37,11 +37,14 @@ const Home = () => {
   const renderProjects = projects => {
     return projects.map(project => (
       {
-        content: index => <HoverableImage 
-                              key={index} 
-                              image={project.image} 
-                              description={project.description}
-                              containerClass={index === 0 ? '' : 'ml-1'} />
+        content: index => (
+          <Link key={project._id} to={`/projetos/${project._id}`}>
+            <HoverableImage  
+                image={project.mainImage} 
+                description={project.description}
+                containerClass={index === 0 ? '' : 'ml-1'} />
+          </Link>
+        )
       }
     ));
   }
