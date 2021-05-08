@@ -6,6 +6,7 @@ import FlexComponent from "./components/hoc/flexComponent";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Contacts from "./components/contacts";
 import Projects from "./components/projects";
+import Project from "./components/project";
 import About from "./components/about";
 import BudgetForm from "./components/budgetForm";
 import NotFound from "./components/notFound";
@@ -13,7 +14,6 @@ import NotFound from "./components/notFound";
 function App() {
   return (
     <BrowserRouter>
-      {/* <div className="flex flex-col flex-1"> */}
       <Navbar />
       <Switch>
         <Route
@@ -24,6 +24,10 @@ function App() {
         <Route
           path="/contato"
           render={(props) => <FlexComponent {...props} Component={Contacts} />}
+        />
+        <Route
+          path="/projetos/:id"
+          render={(props) => <FlexComponent {...props} Component={Project} />}
         />
         <Route
           path="/projetos"
@@ -46,7 +50,6 @@ function App() {
         <Redirect to="/not-found" />
       </Switch>
       <Footer />
-      {/* </div> */}
     </BrowserRouter>
   );
 }

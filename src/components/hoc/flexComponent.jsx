@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FlexComponent = ({ Component }) => {
+const FlexComponent = ({ Component, ...other }) => {
   return (
     <div className="flex-1">
-      <Component />
+      <Component {...other} />
     </div>
   );
 };
