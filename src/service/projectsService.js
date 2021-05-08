@@ -4,13 +4,13 @@ import Landscape from "../assets/images/landscape.jpg";
 const projects = [
   {
     _id: "a1",
-    images: [Landscape],
+    images: [Landscape, Landscape, Landscape],
     mainImage: Landscape,
-    description: "Project made with love",
+    description: "Project one",
   },
   {
     _id: "b2",
-    images: [MockedImage],
+    images: [MockedImage, Landscape],
     mainImage: MockedImage,
     description: "Project made with love",
   },
@@ -52,4 +52,8 @@ export function getMainProjects() {
 
 export function getProjects() {
   return projects;
+}
+
+export function getProject(id) {
+  return projects.find((p) => p._id === id);
 }

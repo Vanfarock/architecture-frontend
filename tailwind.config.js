@@ -7,6 +7,9 @@ module.exports = {
         top: "0 -1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
       },
     },
+    scale: {
+      103: "1.03",
+    },
   },
   variants: {
     extend: {
@@ -14,6 +17,7 @@ module.exports = {
       brightness: ["group-hover"],
       blur: ["group-hover"],
       grayscale: ["group-hover"],
+      scale: ["group-hover"],
     },
   },
   plugins: [],

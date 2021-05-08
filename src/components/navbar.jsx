@@ -20,7 +20,7 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="bg-gray-50 shadow flex justify-center">
+        <nav className="bg-gray-50 shadow flex justify-center mb-10">
             <div className={`flex flex-col mb-3 sm:mb-0 sm:flex-row w-screen justify-between items-center px-5 ${commonStyles.responsiveWidth}`}>
                 <div className="flex-1 mt-5 sm:mt-0">
                     <Link to="/">

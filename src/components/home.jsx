@@ -2,7 +2,7 @@ import React from 'react';
 import Location from './location';
 import Carousel from './common/carousel';
 import Section from './common/section';
-import HoverableImage from './common/hoverableImage';
+import Image from './common/image';
 import Card from './common/card';
 
 import { getSlides } from './../service/homeSlidesService';
@@ -39,7 +39,7 @@ const Home = () => {
       {
         content: index => (
           <Link key={project._id} to={`/projetos/${project._id}`}>
-            <HoverableImage  
+            <Image  
                 image={project.mainImage} 
                 description={project.description}
                 containerClass={index === 0 ? '' : 'ml-1'} />
