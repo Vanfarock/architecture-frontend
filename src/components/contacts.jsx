@@ -5,6 +5,8 @@ import Instagram from '../assets/icons/instagram.svg';
 import Linkedin from '../assets/icons/linkedin.svg';
 import SectionHeader from './common/sectionHeader';
 import Button from './common/button';
+import Input from './common/input';
+import Textarea from './common/textarea';
 
 const Contacts = () => {
   return (
@@ -14,14 +16,23 @@ const Contacts = () => {
         <div className="flex-1 mr-10 w-full">
           <h1 className="text-lg mb-10 text-center">Nos envie uma mensagem através dos nossos contatos! <br /> Adoraríamos saber o que você tem para nos dizer!</h1>
           <form className="flex flex-col items-center">
-            <label className="self-start" htmlFor="email">Email</label>
-            <input email="email" type="email" name="email"  className="bg-gray-50 border p-3 my-2 w-full" />
+            <Input label="Email"
+                   labelClassName="self-start"
+                   type="email"
+                   name="email"
+                   id="email" />
 
-            <label className="self-start" htmlFor="subject">Assunto</label>
-            <input email="subject" type="text" name="subject" className="bg-gray-50 border p-3 my-2 w-full" />
+            <Input label="Assunto"
+                   labelClassName="self-start"
+                   type="text"
+                   name="subject"
+                   id="subject" />
 
-            <label className="self-start" htmlFor="message">Mensagem</label>
-            <textarea email="message" rows="10" name="message" className="bg-gray-50 border p-3 my-2 w-full" />
+            <Textarea label="Mensagem"
+                      labelClassName="self-start"
+                      name="message"
+                      id="message"
+                      rows="10" />
 
             <Button className="self-start w-2/4 p-5" type="submit">Enviar mensagem</Button>
           </form>

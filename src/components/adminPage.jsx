@@ -1,12 +1,13 @@
 import React from 'react';
 import commonStyles from './util/commonStyles';
+import ProjectsForm from './projectsForm';
 
-const About = () => {
+const AdminPage = () => {
   return (
     <div className={`${commonStyles.responsiveWidth} ${commonStyles.responsiveMargin}`}>
-      <h1>About</h1>
+      <ProjectsForm />
     </div>
   );
 };
 
-export default About;
+export default AdminPage;

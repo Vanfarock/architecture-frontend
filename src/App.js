@@ -10,6 +10,7 @@ import Project from "./components/project";
 import About from "./components/about";
 import BudgetForm from "./components/budgetForm";
 import NotFound from "./components/notFound";
+import AdminPage from "./components/adminPage";
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
           render={(props) => (
             <FlexComponent {...props} Component={BudgetForm} />
           )}
+        />
+        <Route
+          path="/admin"
+          render={(props) => <FlexComponent {...props} Component={AdminPage} />}
         />
         <Route
           path="/not-found"
