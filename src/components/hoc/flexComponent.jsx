@@ -1,16 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const FlexComponent = ({ Component, ...other }) => {
-  return (
-    <div className="flex-1">
-      <Component {...other} />
-    </div>
-  );
-};
+export default function flexComponent(Component) {
+  return (props) => {
+    return (
+      <div className="flex-1">
+        <Component {...props} />
+      </div>
+    );
+  };
 
-FlexComponent.propTypes = {
-  Component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-};
-
-export default FlexComponent;
+}

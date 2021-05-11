@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./components/footer";
 import Home from "./components/home";
 import Navbar from "./components/navbar";
-import FlexComponent from "./components/hoc/flexComponent";
+import flexComponent from "./components/hoc/flexComponent";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Contacts from "./components/contacts";
 import Projects from "./components/projects";
@@ -17,41 +17,17 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route
-          path="/"
-          exact
-          render={(props) => <FlexComponent {...props} Component={Home} />}
-        />
-        <Route
-          path="/contato"
-          render={(props) => <FlexComponent {...props} Component={Contacts} />}
-        />
-        <Route
-          path="/projetos/:id"
-          render={(props) => <FlexComponent {...props} Component={Project} />}
-        />
-        <Route
-          path="/projetos"
-          render={(props) => <FlexComponent {...props} Component={Projects} />}
-        />
-        <Route
-          path="/sobre"
-          render={(props) => <FlexComponent {...props} Component={About} />}
-        />
+        <Route path="/" exact component={flexComponent(Home)} />
+        <Route path="/contato" component={flexComponent(Contacts)} />
+        <Route path="/projetos/:id" component={flexComponent(Project)} />
+        <Route path="/projetos" component={flexComponent(Projects)} />
+        <Route path="/sobre" component={flexComponent(About)} />
         <Route
           path="/solicitar-orcamento"
-          render={(props) => (
-            <FlexComponent {...props} Component={BudgetForm} />
-          )}
+          component={flexComponent(BudgetForm)}
         />
-        <Route
-          path="/admin"
-          render={(props) => <FlexComponent {...props} Component={AdminPage} />}
-        />
-        <Route
-          path="/not-found"
-          render={(props) => <FlexComponent {...props} Component={NotFound} />}
-        />
+        <Route path="/admin" component={flexComponent(AdminPage)} />
+        <Route path="/not-found" exact component={flexComponent(NotFound)} />
         <Redirect to="/not-found" />
       </Switch>
       <Footer />
