@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({label, labelClassName, inputClassName, inputId, ...other}) => {
+const Input = ({label, labelClassName, inputClassName, id, ...other}) => {
   return (
     <>
-      <label className={labelClassName} htmlFor={inputId}>{label}</label>
-      <input {...other} className={`bg-gray-50 border p-3 my-2 w-full ${inputClassName}`} /> 
+      {label && <label className={labelClassName} htmlFor={id}>{label}</label>}
+      <input {...other} id={id} className={`bg-gray-50 border p-3 my-2 w-full ${inputClassName}`} /> 
     </>
   );
 };
 
 Input.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.any,
   labelClassName: PropTypes.string,
   inputClassName: PropTypes.string,
-  inputID: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired
 };
 
 export default Input;

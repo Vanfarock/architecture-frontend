@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Textarea = ({label, labelClassName, textareaClassName, textareaId, ...other}) => {
+const Textarea = ({label, labelClassName, textareaClassName, id, ...other}) => {
   return (
     <>
-      <label className={labelClassName} htmlFor={textareaId}>{label}</label>
-      <textarea {...other} className={`bg-gray-50 border p-3 my-2 w-full ${textareaClassName}`} /> 
+      <label className={labelClassName} htmlFor={id}>{label}</label>
+      <textarea {...other} id={id} className={`bg-gray-50 border p-3 my-2 w-full ${textareaClassName}`} /> 
     </>
   );
 };
 
 Textarea.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.any,
   labelClassName: PropTypes.string,
-  inputClassName: PropTypes.string,
-  inputID: PropTypes.string.isRequired
+  textareaClassName: PropTypes.string,
+  id: PropTypes.string.isRequired
 };
 
 export default Textarea;
