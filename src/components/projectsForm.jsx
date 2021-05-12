@@ -1,31 +1,60 @@
-import React from 'react';
-import Photo from '../assets/icons/photo.svg';
+import React, { useState } from 'react';
 import Input from './common/input';
 import SectionHeader from './common/sectionHeader';
+import FileInput from './common/fileInput';
+import Grid from './common/grid';
 
 const ProjectsForm = () => {
-  const formatLabel = () => (
-    <div className="flex flex-row h-full justify-center items-center cursor-pointer hover:bg-gray-50 ">
-      <img className="w-14 mr-5" src={Photo} alt="Icon" />
-      <h1 className="text-lg">Imagem principal</h1>
-    </div>
-  );
+  const [files, setFiles] = useState([]);
+
+  const handleFileChange = (e) => {
+    const inputFiles = Array.from(e.target.files);
+    
+    Promise.all(inputFiles.map(file => {
+      return (new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = data => {
+          resolve(data.target.result);
+        };
+        reader.readAsDataURL(file);
+      }));
+    }))
+    .then(images => {
+      setFiles([...files, ...images]);
+    });
+  }
+
+  const formatImagesPreview = () => {
+    return files.map((fileUrl, index) => ({
+      content: () => (
+        <img className="max-h-96" key={index} src={fileUrl} alt="file" />
+      )
+    }));
+  }
 
   return (
     <div className="w-full">
       <SectionHeader className="mb-10">Cadastro de projetos</SectionHeader>
       <form>
         <Input label="Nome do projeto"
-               labelClassName="self-start"
                name="projectName"
                type="text"
                id="projectName" />
-        <Input label={formatLabel()}
-               labelClassName="self-start border inline-block h-96 w-2/4"
-               inputClassName="hidden"
-               name="mainImage"
-               type="file"
-               id="mainImage" />
+
+        <label htmlFor="mainImage">Insira as imagens do projeto</label>
+        <FileInput accept="image/*"
+                   name="mainImage"
+                   type="file"
+                   id="mainImage"
+                   multiple
+                   onChange={handleFileChange} />
+
+        <Grid items={formatImagesPreview()} />
+        {/* <div className="grid grid-cols-2 gap-3 justify-items-center">
+          {files.map((fileUrl, index) => (
+            <img className="max-h-96" key={index} src={fileUrl} alt="file" />
+          ))}
+        </div> */}
       </form>
     </div>
   );
