@@ -27,7 +27,7 @@ const ProjectsForm = () => {
   const formatImagesPreview = () => {
     return files.map((fileUrl, index) => ({
       content: () => (
-        <img className="max-h-96" key={index} src={fileUrl} alt="file" />
+        <img className="max-h-96 object-cover w-full h-full text-center" key={index} src={fileUrl} alt="file" />
       )
     }));
   }
@@ -50,11 +50,6 @@ const ProjectsForm = () => {
                    onChange={handleFileChange} />
 
         <Grid items={formatImagesPreview()} />
-        {/* <div className="grid grid-cols-2 gap-3 justify-items-center">
-          {files.map((fileUrl, index) => (
-            <img className="max-h-96" key={index} src={fileUrl} alt="file" />
-          ))}
-        </div> */}
       </form>
     </div>
   );

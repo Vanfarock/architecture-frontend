@@ -37,12 +37,13 @@ const Home = () => {
   const renderProjects = projects => {
     return projects.map(project => (
       {
-        content: index => (
+        content: () => (
           <Link key={project._id} to={`/projetos/${project._id}`}>
             <Image  
                 image={project.mainImage} 
                 description={project.description}
-                containerClass={index === 0 ? '' : 'ml-1'} />
+                containerClass="flex justify-center items-center h-full hover:bg-gray-400"
+                imageClass="object-cover w-full" />
           </Link>
         )
       }

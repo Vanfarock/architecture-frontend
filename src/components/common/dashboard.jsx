@@ -32,7 +32,8 @@ const Dashboard = ({items}) => {
     <Carousel responsive={responsive}
               draggable={false}
               removeArrowOnDeviceType={'mobile'}
-              partialVisible={true}>
+              partialVisible={true}
+              className="flex">
       {items.map((item, index) => (
         item.content(index)
       ))}

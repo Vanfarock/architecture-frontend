@@ -1,10 +1,20 @@
 import MockedImage from "../assets/images/mocked-image.jpg";
 import Landscape from "../assets/images/landscape.jpg";
+import Koala from "../assets/images/koala.jpg";
 
 const projects = [
   {
     _id: "a1",
-    images: [Landscape, Landscape, Landscape],
+    images: [
+      Landscape,
+      Landscape,
+      Landscape,
+      Koala,
+      Landscape,
+      Landscape,
+      Landscape,
+      Landscape,
+    ],
     mainImage: Landscape,
     description: "Project one",
   },

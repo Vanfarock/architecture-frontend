@@ -14,14 +14,15 @@ const Carousel = ({slides, children, className, ...other}) => {
         dragEnabled={false}
         infinite={true}
         isIntrinsicHeight={true}
-
-        className={`flex flex-col overflow-hidden relative my-5 ${className || ''}`}
+        className={`flex flex-col max-h-screen relative my-5 ${className || ''}`}
         {...other}
       >
         <Slider>
           {slides.map((slide, index) => (
             <Slide key={index} index={index}>
-              <Image src={slide.image} alt={slide.imageLabel} hasMasterSpinner={true} />
+              <div className="overflow-hidden">
+                <Image src={slide.image} alt={slide.imageLabel} className="object-cover h-full w-full" hasMasterSpinner={true} />
+              </div>
             </Slide>
           ))}
         </Slider>
