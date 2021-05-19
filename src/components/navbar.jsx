@@ -32,7 +32,7 @@ const Navbar = () => {
                     {navItems.map(item => (
                         <NavLink key={item.path} 
                                  to={item.path}
-                                 className="text-gray-500 border-b-4 border-transparent hover:text-gray-900 hover:border-indigo-500 px-5 py-5 w-screen sm:w-auto text-sm sm:text-lg font-medium">
+                                 className={`hover:border${commonStyles.primaryColorHover} border-b-4 border-transparent text-gray-500 hover:text-gray-900 px-5 py-5 w-screen sm:w-auto text-sm sm:text-lg font-medium`}>
                           {item.label}
                         </NavLink>
                     ))}

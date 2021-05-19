@@ -11,7 +11,7 @@ const Project = ({ match }) => {
   const formatProjectImages = () => {
     return project.images.map((image, index) => (
       {
-        content: () => <Image key={index} hover={false} image={image} />
+        content: () => <Image key={index} hover={false} src={image} />
       }
     ));
   }

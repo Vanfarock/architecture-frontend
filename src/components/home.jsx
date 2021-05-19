@@ -40,7 +40,7 @@ const Home = () => {
         content: () => (
           <Link key={project._id} to={`/projetos/${project._id}`}>
             <Image  
-                image={project.mainImage} 
+                src={project.mainImage} 
                 description={project.description}
                 containerClass="flex justify-center items-center h-full hover:bg-gray-400"
                 imageClass="object-cover w-full" />

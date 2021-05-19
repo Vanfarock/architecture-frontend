@@ -13,7 +13,7 @@ const Projects = () => {
     return projects.map(project => ({
       content: () => (
         <Link key={project._id} to={`/projetos/${project._id}`}>
-          <Image image={project.mainImage}
+          <Image src={project.mainImage}
                  description={project.description}
                  descriptionClass="text-xl" />
         </Link>
