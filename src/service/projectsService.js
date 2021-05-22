@@ -22,37 +22,37 @@ const projects = [
     _id: "b2",
     images: [MockedImage, Landscape],
     mainImage: MockedImage,
-    description: "Project made with love",
+    description: "Project two",
   },
   {
     _id: "c3",
     images: [Landscape],
     mainImage: Landscape,
-    description: "Project made with love",
+    description: "Project three",
   },
   {
     _id: "d4",
     images: [MockedImage],
     mainImage: MockedImage,
-    description: "Project made with love",
+    description: "Project four",
   },
   {
     _id: "e5",
     images: [Landscape],
     mainImage: Landscape,
-    description: "Project made with love",
+    description: "Project five",
   },
   {
     _id: "f6",
     images: [MockedImage],
     mainImage: MockedImage,
-    description: "Project made with love",
+    description: "Project six",
   },
   {
     _id: "g7",
     images: [Landscape],
     mainImage: Landscape,
-    description: "Project made with love",
+    description: "Project seven",
   },
 ];
 

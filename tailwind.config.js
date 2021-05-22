@@ -18,6 +18,7 @@ module.exports = {
       blur: ["group-hover"],
       grayscale: ["group-hover"],
       scale: ["group-hover"],
+      backgroundColor: ["even"],
     },
   },
   plugins: [],
